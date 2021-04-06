@@ -1,6 +1,6 @@
     <a href="<?php echo base_url('dashboard') ?>" class="brand-link">
-      <img src="<?php echo base_url(); ?>assets/dist/img/uwuu.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">SPP BY ERWIN</span>
+      <img src="<?php echo base_url(); ?>assets/dist/img/doraemon-1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Admin SPP Rosyid </span>
     </a>
 
     <!-- Sidebar -->
@@ -43,7 +43,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-star" style="color:yellow"></i>
+              <i class="nav-icon fas fa-clock" style="color:pink"></i>
               <p>
               Dashboard
               </p>
@@ -51,7 +51,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php echo base_url('siswa') ?>" class="nav-link">
-              <i class="nav-icon fas fa-users" style="color:cyan"></i>
+              <i class="nav-icon fas fa-users" style="color:yellow"></i>
               <p>
                 Data Siswa
               </p>
@@ -59,7 +59,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php echo base_url('petugas') ?>" class="nav-link">
-              <i class="nav-icon fas fa-users" style="color:cyan"></i>
+              <i class="nav-icon fas fa-users" style="color:yellow"></i>
               <p>
                 Data Petugas
               </p>
@@ -67,7 +67,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php echo base_url('kelas') ?>" class="nav-link">
-              <i class="nav-icon fas fa-users" style="color:cyan"></i>
+              <i class="nav-icon fas fa-users" style="color:yellow"></i>
               <p>
                 Data Kelas
               </p>
@@ -75,7 +75,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php echo base_url('spp') ?>" class="nav-link">
-              <i class="nav-icon fas fa-users" style="color:cyan"></i>
+              <i class="nav-icon fas fa-wallet" style="color:green"></i>
               <p>
                 Data SPP
               </p>
@@ -83,7 +83,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php echo base_url('pembayaran') ?>" class="nav-link">
-              <i class="nav-icon fas fa-users" style="color:cyan"></i>
+              <i class="nav-icon fas fa-wallet" style="color:red"></i>
               <p>
                 Transaksi Pembayaran
               </p>

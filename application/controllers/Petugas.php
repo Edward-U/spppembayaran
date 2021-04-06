@@ -66,12 +66,13 @@ class Petugas extends CI_Controller {
 
     public function hapus(){
       if($this->session->userdata('login')!= TRUE){
-            redirect('login');
+      redirect('login');
       }
       $id = $this->uri->segment(3);
       $this->M_Petugas->hapus_data_petugas($id);
       redirect('petugas');
       }
+
     public function pdf(){
       $this->load->library('dompdf_gen');
 

@@ -8,11 +8,11 @@ class M_Pembayaran extends CI_Model {
     function simpan(){
         $data = array('id_pembayaran' => $this->input->post('id_pembayaran'),
                 'nisn' => ($this->input->post('nisn')),
+                'id_petugas' => ($this->input->post('id_petugas')),
+                'nama_siswa' => ($this->input->post('nama_siswa')),
                 'tgl_bayar' => ($this->input->post('tgl_bayar')),
-                'bulan_dibayar' => ($this->input->post('bulan_dibayar')),
-                'tahun_dibayar' => ($this->input->post('tahun_dibayar')),
                 'id_spp' => ($this->input->post('id_spp')),
-                'jumlah_bayar' => $this->input->post('jumlah_bayar'));
+                'nominal' => $this->input->post('nominal'));
         $insert = $this->db->insert('pembayaran',$data);
     }
 

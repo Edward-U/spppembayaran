@@ -1,4 +1,4 @@
-  <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -12,82 +12,27 @@
   <!-- Main content -->
   <div class="content">
       <div class="container-fluid">
-        <div class="row"> 
+        <div class="row">
           <div class="col-lg-12">
-            <div class="card card-primary card-primary">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h5 class="m-0"><?php echo $title; ?></h5>
+                <h5 class="m-1"><?php echo $title; ?></h5>
               </div>
               <div class="card-body">
-
-                <form class="form-horizontal" method="post" action="<?php echo base_url('pembayaran/simpan') ?>">
-                  <div class="card-body">
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">ID Pembayaran</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" name="nisn" placeholder="ID Pembayaran" required>
-                            </div> 
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">NISN</label>
-                            <div class="col-sm-8">
-                                <input type="nis" class="form-control" name="nisn" placeholder="NISN" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Tanggal Bayar</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="tgl_bayar" placeholder="Tanggal Bayar" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Bulan Bayar</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" name="bulan_dibayar" placeholder="Bulan Bayar" required>
-                            </div>
-                          </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Tahun Bayar</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" name="tahun_dibayar" placeholder="Tahun Bayar" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">ID SPP</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" name="id_spp" placeholder="ID SPP" required>
-                            </div>
-                            </div>
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Masukkan Nominal</label>
-                            <div class="col-sm-8">
-                              <input type="text" class="form-control" name="jumlah_bayar" placeholder="Rupiah" required>
-                            </div>
-                        </div>
-                      
-                    </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-xs btn-primary">Simpan</button>
-                        <button type="reset" class="btn btn-xs btn-warning">Reset</button>
-                    </div>
-                    
-        <div class="card-footer clearfix">
-            <a href="<?php echo base_url('pembayaran_laporan') ?>" class="nav-link btn btn-outline-secondary btn-outline-secondary" ><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;&nbsp;Laporan</a>
-        </div>
-
-                </form>
-
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>ID Pembayaran</th>
-                            <th>Nama</th>
-                            <th>Tanggal Bayar</th>
-                            <th>Bulan Bayar</th>
-                            <th>Tahun Bayar</th>
-                            <th>ID SPP</th>
-                            <th>Jumlah Bayar</th>
+                            <th>No</th>
+                            <th>Id Pembayaran</th>
+                            <th>Id Petugas</th>
+                            <th>Nama Siswa</th>
+                            <th>NISN</th>
+                            <th>Tanggal</th>
+                            <th>Bulan</th>
+                             <th>Tahun</th> 
+                            <th>Id SPP</th>
+                            <th>Nominal</th>
+                            <th>Opsi</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -97,26 +42,34 @@
                             $no++;
                         ?>
                         <tr>
-                            
+                            <td><?php echo $no; ?></td>
                             <td><?php echo $value->id_pembayaran; ?></td>
+                            <td><?php echo $value->id_petugas; ?></td>
+                            <td><?php echo $value->nama_siswa; ?></td>
                             <td><?php echo $value->nisn; ?></td>
                             <td><?php echo $value->tgl_bayar; ?></td>
-                            <td><?php echo $value->bulan_dibayar; ?></td>
-                            <td><?php echo $value->tahun_dibayar; ?></td>
+                            <!-- <td><?php echo $value->bulan_dibayar; ?></td> -->
+                            <!-- <td><?php echo $value->tahun_dibayar; ?></td> -->
                             <td><?php echo $value->id_spp; ?></td>
-                            <td><?php echo $value->jumlah_bayar; ?></td>
+                            <td><?php echo $value->nominal; ?></td>
                             <td>
-                                <a href="<?php echo base_url('pembayaran/hapus/').$value->id_pembayaran ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                <a href="<?php echo base_url('pembayaran/ubah/').$value->nisn ?>" class="btn btn-sm btn-warning">Edit</a> -->
+                                <a href="<?php echo base_url('pembayaran/hapus/').$value->nisn ?>" class="btn btn-sm btn-danger">Hapus</a>
                             </td>
                         </tr>
                         <?php
                         endforeach;
                         ?>
                         </tbody>
-                    </table> 
+                        <tfoot>
+
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
+        <div class="card-footer clearfix">
+            <a href="<?php echo base_url('pembayaran/tambah') ?>" class="btn btn-warning btn-primary">Tambah Data</a>
+            <a href="<?php echo base_url('pembayaran/pdf')?>" class="btn btn-danger btn-danger">PDF</a>
+        </div>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->

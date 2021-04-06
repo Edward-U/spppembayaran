@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
-            <div class="card card-primary card-primary">
+            <div class="card card-secondary card-secondary">
               <div class="card-header">
                 <h5 class="m-0"><?php echo $title; ?></h5>
               </div>
@@ -51,15 +51,15 @@
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
-                <div class="card-footer clearfix">
-            <a href="<?php echo base_url('spp/pdf') ?>" class="nav-link btn btn-outline-primary btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;PDF</a>
+                              <div class="card-footer clearfix">
+            <a href="<?php echo base_url('spp/pdf') ?>" class="btn btn-sm btn-warning"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;PDF</a>
         </div>        
 
         <div class="card-footer clearfix">
-            <a href="<?php echo base_url('spp/tambah') ?>" class="nav-link btn btn-outline-primary btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Tambah Data</a>
+            <a href="<?php echo base_url('spp/tambah') ?>" class="btn btn-sm btn-warning"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Tambah Data</a>
         </div>        
         <div class="card-footer clearfix">
-            <a href="<?php echo base_url('spp_laporan') ?>" class="nav-link btn btn-outline-secondary btn-outline-secondary"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;&nbsp;Laporan</a>
+            <a href="<?php echo base_url('spp_laporan') ?>" class="btn-sm btn-warning"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;&nbsp;Laporan</a>
         </div>
       </div><!-- /.container-fluid -->
     </div>

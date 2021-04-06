@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2021 at 12:59 AM
--- Server version: 10.1.21-MariaDB
+-- Generation Time: 05 Apr 2021 pada 19.16
+-- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -32,10 +32,17 @@ CREATE TABLE `kelas` (
   `kompetensi_keahlian` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
+(7, 'XIIRPL', 'Rekayasa Perangkat Lunak');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -43,16 +50,24 @@ CREATE TABLE `pembayaran` (
   `id_petugas` int(11) NOT NULL,
   `nisn` varchar(10) NOT NULL,
   `tgl_bayar` date NOT NULL,
-  `bulan_dibayar` varchar(8) NOT NULL,
-  `tahun_dibayar` varchar(4) NOT NULL,
-  `id_spp` int(11) NOT NULL,
-  `jumlah_bayar` int(11) NOT NULL
+  `nama_siswa` varchar(20) NOT NULL,
+  `nominal` varchar(15) NOT NULL,
+  `id_spp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `nama_siswa`, `nominal`, `id_spp`) VALUES
+(1213, 14, '4156', '2021-04-04', 'Rosyid', '150.000', 1567),
+(4646, 6969, '4158', '2021-04-02', 'Rosyid ', '450.000', 9797),
+(6565, 5656, '8787', '2021-04-03', 'Nugroho', '250.000', 8989);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `petugas`
+-- Struktur dari tabel `petugas`
 --
 
 CREATE TABLE `petugas` (
@@ -64,21 +79,17 @@ CREATE TABLE `petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `petugas`
+-- Dumping data untuk tabel `petugas`
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
-(0, 'linggar', '5bbe1abe7350630e69847723100c2946', 'linggarjati', '1'),
-(1140, 'farros', 'e62933e0164944d64cc96638b7ad2321', 'farrossaja', '2'),
-(1150, 'chandra', 'chandra123', 'chandraw', '1'),
-(1160, 'dio', '32d401cd82e66a172b429cad0ee9e8bf', 'diowaw', '2'),
-(1170, 'afgan', 'afgan123', 'afgans', '2'),
-(1180, 'gojo', '565bf3c0a9e5338df649ea7111319c1e', 'gojo satoru', '2');
+(1, 'naran', 'MD5', 'naran', '2'),
+(6, 'shit', '21232f297a57a5a743894a0e4a801fc3', 'rosyid', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -91,10 +102,17 @@ CREATE TABLE `siswa` (
   `id_spp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `siswa`
+--
+
+INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
+('164669', '4156', 'Rosyid Shid', 0, 'Kotagede', '+62 896555262', 1616);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `spp`
+-- Struktur dari tabel `spp`
 --
 
 CREATE TABLE `spp` (
@@ -137,6 +155,30 @@ ALTER TABLE `siswa`
 ALTER TABLE `spp`
   ADD PRIMARY KEY (`id_spp`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `kelas`
+--
+ALTER TABLE `kelas`
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6566;
+--
+-- AUTO_INCREMENT for table `petugas`
+--
+ALTER TABLE `petugas`
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `spp`
+--
+ALTER TABLE `spp`
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
